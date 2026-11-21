@@ -6,15 +6,13 @@
   --text: #2a1a20;
   --white: #ffffff;
 }
-
-/* ---------- 2. Base (mobile) ---------- */
 * {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 4.5rem;       /* keeps headings below the sticky header */
+  scroll-padding-top: 4.5rem;      
 }
 
 body {
@@ -30,7 +28,6 @@ h2 { font-size: 1.75rem; margin: 0 0 1rem; }
 h3 { font-size: 1.2rem; margin: 0 0 .75rem; }
 p  { margin: 0 0 1rem; }
 
-/* Page width: 90% of the screen, but never wider than 65rem */
 .container {
   width: 90%;
   max-width: 65rem;
@@ -38,10 +35,9 @@ p  { margin: 0 0 1rem; }
 }
 
 .section {
-  padding: 3rem 0;                  /* same vertical spacing everywhere */
+  padding: 3rem 0;                 
 }
 
-/* ---------- 3. Buttons and touch targets (44px minimum) ---------- */
 .btn,
 .nav a,
 .hamburger,
@@ -67,7 +63,6 @@ select {
   background: #ffc15e;
 }
 
-/* ---------- 4. Header and navigation (Flexbox) ---------- */
 .header {
   position: sticky;
   top: 0;
@@ -77,7 +72,7 @@ select {
 }
 
 .bar {
-  display: flex;                    /* logo on the left, hamburger on the right */
+  display: flex;                    
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
@@ -90,10 +85,8 @@ select {
   font-weight: bold;
   text-decoration: none;
 }
-
-/* Hamburger button (a label connected to a hidden checkbox) */
 .nav-toggle {
-  position: absolute;               /* hidden visually, still works with the keyboard */
+  position: absolute;             
   opacity: 0;
 }
 
@@ -113,7 +106,6 @@ select {
   outline: 3px solid var(--white);
 }
 
-/* On mobile the menu is hidden until the checkbox is checked */
 .nav {
   display: none;
   flex-direction: column;
@@ -132,7 +124,6 @@ select {
   border-top: 1px solid rgba(255, 255, 255, .2);
 }
 
-/* ---------- 5. Hero ---------- */
 .hero {
   padding: 3rem 0;
   background: var(--dark);
@@ -140,7 +131,7 @@ select {
 }
 
 .hero-grid {
-  display: grid;                    /* one column on mobile */
+  display: grid;                  
   gap: 2rem;
   align-items: center;
 }
@@ -155,7 +146,6 @@ select {
   text-align: center;
 }
 
-/* ---------- 6. Menu (Grid for columns, Flexbox for each row) ---------- */
 .menu-grid {
   display: grid;
   gap: 2rem;
@@ -163,7 +153,7 @@ select {
 
 .dish {
   display: flex;
-  justify-content: space-between;   /* name left, price right */
+  justify-content: space-between;   
   gap: 1rem;
   padding: .6rem 0;
   border-bottom: 1px dotted var(--text);
@@ -173,14 +163,14 @@ select {
   color: var(--teal);
 }
 
-/* ---------- 7. Why us tiles ---------- */
+
 .features {
   background: var(--teal);
   color: var(--white);
 }
 
 .tiles {
-  display: grid;                    /* one column on mobile */
+  display: grid;                    
   gap: 1rem;
 }
 
@@ -198,7 +188,6 @@ select {
   margin: 0;
 }
 
-/* ---------- 8. Visit and form ---------- */
 .visit-grid {
   display: grid;
   gap: 2rem;
@@ -240,7 +229,6 @@ select {
   border-radius: .5rem;
 }
 
-/* ---------- 9. Footer ---------- */
 .footer {
   padding: 1.5rem 0;
   text-align: center;
@@ -248,18 +236,13 @@ select {
   color: #e9d6c4;
 }
 
-/* =====================================================
-   MEDIA QUERIES (mobile-first: min-width)
-   ===================================================== */
 
-/* Small tablets: 600px and up */
 @media (min-width: 600px) {
   .tiles {
-    grid-template-columns: 1fr 1fr;          /* 2 tiles per row */
+    grid-template-columns: 1fr 1fr;        
   }
 }
 
-/* Tablets: 768px and up */
 @media (min-width: 768px) {
   h1 { font-size: 3.5rem; }
   h2 { font-size: 2.25rem; }
@@ -269,10 +252,9 @@ select {
   .hero-grid,
   .menu-grid,
   .visit-grid {
-    grid-template-columns: 1fr 1fr;          /* 2 columns */
+    grid-template-columns: 1fr 1fr;         
   }
 
-  /* Navigation: hide the hamburger and show the links in a row */
   .hamburger {
     display: none;
   }
@@ -289,11 +271,10 @@ select {
   }
 }
 
-/* Desktops: 1024px and up */
 @media (min-width: 1024px) {
   h1 { font-size: 4.5rem; }
 
   .tiles {
-    grid-template-columns: repeat(4, 1fr);   /* 4 tiles in one row */
+    grid-template-columns: repeat(4, 1fr);  
   }
 }
