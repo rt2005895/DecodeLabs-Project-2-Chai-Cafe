@@ -1,0 +1,299 @@
+:root {
+  --dark: #3b1020;
+  --gold: #f2a93b;
+  --cream: #fff1e2;
+  --teal: #1b6f6a;
+  --text: #2a1a20;
+  --white: #ffffff;
+}
+
+/* ---------- 2. Base (mobile) ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;       /* keeps headings below the sticky header */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--cream);
+}
+
+h1 { font-size: 2.5rem; line-height: 1.1; margin: 0 0 1rem; }
+h2 { font-size: 1.75rem; margin: 0 0 1rem; }
+h3 { font-size: 1.2rem; margin: 0 0 .75rem; }
+p  { margin: 0 0 1rem; }
+
+/* Page width: 90% of the screen, but never wider than 65rem */
+.container {
+  width: 90%;
+  max-width: 65rem;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 3rem 0;                  /* same vertical spacing everywhere */
+}
+
+/* ---------- 3. Buttons and touch targets (44px minimum) ---------- */
+.btn,
+.nav a,
+.hamburger,
+input,
+select {
+  min-height: 44px;
+}
+
+.btn {
+  display: inline-block;
+  padding: .6rem 1.75rem;
+  background: var(--gold);
+  color: var(--dark);
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 0;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #ffc15e;
+}
+
+/* ---------- 4. Header and navigation (Flexbox) ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--dark);
+  color: var(--white);
+}
+
+.bar {
+  display: flex;                    /* logo on the left, hamburger on the right */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 0;
+}
+
+.logo {
+  color: var(--white);
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Hamburger button (a label connected to a hidden checkbox) */
+.nav-toggle {
+  position: absolute;               /* hidden visually, still works with the keyboard */
+  opacity: 0;
+}
+
+.hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  font-size: 1.6rem;
+  color: var(--dark);
+  background: var(--gold);
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.nav-toggle:focus-visible + .hamburger {
+  outline: 3px solid var(--white);
+}
+
+/* On mobile the menu is hidden until the checkbox is checked */
+.nav {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nav-toggle:checked ~ .nav {
+  display: flex;
+}
+
+.nav a {
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  text-decoration: none;
+  border-top: 1px solid rgba(255, 255, 255, .2);
+}
+
+/* ---------- 5. Hero ---------- */
+.hero {
+  padding: 3rem 0;
+  background: var(--dark);
+  color: var(--white);
+}
+
+.hero-grid {
+  display: grid;                    /* one column on mobile */
+  gap: 2rem;
+  align-items: center;
+}
+
+.kicker {
+  color: var(--gold);
+  font-weight: bold;
+}
+
+.hero-icon {
+  font-size: 6rem;
+  text-align: center;
+}
+
+/* ---------- 6. Menu (Grid for columns, Flexbox for each row) ---------- */
+.menu-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.dish {
+  display: flex;
+  justify-content: space-between;   /* name left, price right */
+  gap: 1rem;
+  padding: .6rem 0;
+  border-bottom: 1px dotted var(--text);
+}
+
+.dish strong {
+  color: var(--teal);
+}
+
+/* ---------- 7. Why us tiles ---------- */
+.features {
+  background: var(--teal);
+  color: var(--white);
+}
+
+.tiles {
+  display: grid;                    /* one column on mobile */
+  gap: 1rem;
+}
+
+.tile {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, .15);
+  border-radius: 1rem;
+}
+
+.tile span {
+  font-size: 2rem;
+}
+
+.tile p {
+  margin: 0;
+}
+
+/* ---------- 8. Visit and form ---------- */
+.visit-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.hours {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hours li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .6rem 0;
+  border-bottom: 1px solid rgba(42, 26, 32, .3);
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--white);
+  border-radius: 1rem;
+}
+
+label {
+  display: grid;
+  gap: .3rem;
+  font-weight: bold;
+}
+
+input,
+select {
+  font-size: 1rem;
+  padding: .5rem .75rem;
+  border: 2px solid #b9a9a1;
+  border-radius: .5rem;
+}
+
+/* ---------- 9. Footer ---------- */
+.footer {
+  padding: 1.5rem 0;
+  text-align: center;
+  background: var(--dark);
+  color: #e9d6c4;
+}
+
+/* =====================================================
+   MEDIA QUERIES (mobile-first: min-width)
+   ===================================================== */
+
+/* Small tablets: 600px and up */
+@media (min-width: 600px) {
+  .tiles {
+    grid-template-columns: 1fr 1fr;          /* 2 tiles per row */
+  }
+}
+
+/* Tablets: 768px and up */
+@media (min-width: 768px) {
+  h1 { font-size: 3.5rem; }
+  h2 { font-size: 2.25rem; }
+
+  .section { padding: 4.5rem 0; }
+
+  .hero-grid,
+  .menu-grid,
+  .visit-grid {
+    grid-template-columns: 1fr 1fr;          /* 2 columns */
+  }
+
+  /* Navigation: hide the hamburger and show the links in a row */
+  .hamburger {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    gap: 1.5rem;
+  }
+
+  .nav a {
+    border-top: 0;
+  }
+}
+
+/* Desktops: 1024px and up */
+@media (min-width: 1024px) {
+  h1 { font-size: 4.5rem; }
+
+  .tiles {
+    grid-template-columns: repeat(4, 1fr);   /* 4 tiles in one row */
+  }
+}

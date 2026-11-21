@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Responsive meta tag: use the real device width. Zoom stays enabled. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chai &amp; Coffee | Café in Lahore</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER + RESPONSIVE NAVIGATION (hamburger menu, no JavaScript) -->
+  <header class="header">
+    <div class="container bar">
+      <a class="logo" href="#top">Chai &amp; Coffee</a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open or close menu">
+      <label for="nav-toggle" class="hamburger" aria-hidden="true">&#9776;</label>
+
+      <nav class="nav">
+        <a href="#menu">Our Menu</a>
+        <a href="#why">Why Us</a>
+        <a href="#visit">Visit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="kicker">Neighbourhood café, Lahore</p>
+          <h1>Slow tea.<br>Warm snacks.</h1>
+          <p>Karak chai brewed to order, fresh parathas and desserts made every morning. Stay for a cup or take it to go.</p>
+          <a class="btn" href="#visit">Book a table</a>
+        </div>
+        <div class="hero-icon" aria-hidden="true">&#9749;</div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="section">
+      <div class="container">
+        <h2>Our Menu</h2>
+        <div class="menu-grid">
+          <div>
+            <h3>Drinks</h3>
+            <div class="dish"><span>Karak Chai</span><strong>Rs 250</strong></div>
+            <div class="dish"><span>Kashmiri Chai</span><strong>Rs 380</strong></div>
+            <div class="dish"><span>Cold Coffee</span><strong>Rs 450</strong></div>
+          </div>
+          <div>
+            <h3>Food</h3>
+            <div class="dish"><span>Paratha Roll</span><strong>Rs 550</strong></div>
+            <div class="dish"><span>Aloo Samosa (2)</span><strong>Rs 200</strong></div>
+            <div class="dish"><span>Gulab Jamun</span><strong>Rs 300</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="why" class="section features">
+      <div class="container">
+        <h2>Why people come back</h2>
+        <div class="tiles">
+          <div class="tile"><span aria-hidden="true">&#9749;</span><h3>Brewed to order</h3><p>No tea sits in a flask.</p></div>
+          <div class="tile"><span aria-hidden="true">&#127858;</span><h3>Made fresh daily</h3><p>Baked and fried each morning.</p></div>
+          <div class="tile"><span aria-hidden="true">&#128246;</span><h3>Free Wi-Fi</h3><p>A quiet corner for work.</p></div>
+          <div class="tile"><span aria-hidden="true">&#128181;</span><h3>Fair prices</h3><p>Student discount on weekdays.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIT + FORM -->
+    <section id="visit" class="section">
+      <div class="container visit-grid">
+        <div>
+          <h2>Visit us</h2>
+          <p>Gulberg III, Lahore, Pakistan</p>
+          <ul class="hours">
+            <li><span>Monday to Thursday</span><strong>9 am to 11 pm</strong></li>
+            <li><span>Friday and Saturday</span><strong>9 am to 1 am</strong></li>
+            <li><span>Sunday</span><strong>10 am to 10 pm</strong></li>
+          </ul>
+        </div>
+
+        <form action="#">
+          <h3>Reserve a table</h3>
+          <label>Name <input type="text" name="name"></label>
+          <label>Phone <input type="tel" name="phone"></label>
+          <label>Date <input type="date" name="date"></label>
+          <label>Guests
+            <select name="guests">
+              <option>1 to 2</option>
+              <option>3 to 4</option>
+              <option>5 to 8</option>
+            </select>
+          </label>
+          <button class="btn" type="submit">Reserve</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">&copy; 2026 Chai &amp; Coffee. Built for DecodeLabs Project 2.</div>
+  </footer>
+
+</body>
+</html>
